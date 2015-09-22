@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# check if there are already PNGs here, and bail if there are
+ls *.png > /dev/null 2>&1
+if [ "$?" -eq "0" ]
+then
+  echo "There are PNGs in this directory! Aborting."
+  exit 1
+fi
+
+while read url; do
+  webkit2png --fullsize --scale=1 --width=320 --clipwidth=1 $url > /dev/null
+done
+
+convert *.png +repage -crop 1090x1603 +repage -units PixelsPerInch -density 150x150 -extent 1090x1603 -bordercolor transparent -border 75x75 pdf:-
+
+rm *.png
