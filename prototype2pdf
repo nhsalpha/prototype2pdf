@@ -9,7 +9,7 @@ then
 fi
 
 while read url; do
-  webkit2png --fullsize --scale=1 --width=320 --clipwidth=1 $url > /dev/null
+  webkit2png --fullsize --scale=1 --width=${1:-320} --clipwidth=1 $url > /dev/null
 done
 
 convert *.png +repage -crop 1090x1603 +repage -units PixelsPerInch -density 150x150 -extent 1090x1603 -bordercolor transparent -border 75x75 pdf:-
