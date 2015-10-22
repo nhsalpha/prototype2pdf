@@ -24,9 +24,15 @@ prototype2pdf < urls.txt > my-prototype.pdf
 
 where `urls.txt` contains one URL per line.
 
+Optionally, the width of the screenshot to be taken using webkit2png can be
+specified as the first argument, $1, as follows, assuming a 150px width:
+
+```
+prototype2pdf < urls.txt > my-prototype.pdf 150
+```
+
 ## Todo
 
-- Allow width to be set on the command line instead of hard-coding it to 320px
 - Use a temporary directory to store the screenshots instead of the current
   directory
 - Make the screenshots appear in the PDF in the same order as the input URLs
