@@ -4,13 +4,19 @@ prototype2pdf is a command line tool that takes a list of URLs for a prototype a
 
 ## Dependencies
 
-- [webkit2png](http://www.paulhammond.org/webkit2png/)
+- [PhantomJS](http://phantomjs.org/)
 - [ImageMagick](http://www.imagemagick.org)
 
-Both can be installed using [Homebrew](http://brew.sh):
+On Mac OS X, this can be installed via [Homebrew](http://brew.sh):
 
 ```
-brew install webkit2png imagemagick
+brew install phantomjs
+```
+
+On debian-type systems, this can be installed via apt:
+
+```
+sudo apt-get install phantomjs
 ```
 
 ## Usage
